@@ -16,16 +16,26 @@
     "strictNullChecks": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["vitest/globals","cypress", "node", "cypress-file-upload","@testing-library/cypress"],
-    "baseUrl": "./",
+    "types": [
+      "vitest/globals",
+      "cypress",
+      "node",
+      "cypress-file-upload",
+      "@testing-library/cypress"
+    ],
+    "baseUrl": ".",
     "paths": {
-      "@": ["src"],
-      "test": ["test"],
-      "test/*": ["test/*"],
       "@/*": ["src/*"],
       "~/*": ["node_modules/*"]
     }
   },
-  "include": ["src","src/**/*", "src/**/*.tsx"],
+  "include": [
+    "src/**/*",
+    "*.ts",
+    "*.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
+  ],
+  "exclude": ["node_modules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
